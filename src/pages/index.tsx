@@ -129,11 +129,8 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   });
 
-  String.prototype.replaceAt = function (index, char) {// eslint-disable-next-line  @typescript-eslint/no-explicit-any
-    var a = this.split("");// eslint-disable-next-line  @typescript-eslint/no-explicit-any
-    a[index] = char;// eslint-disable-next-line  @typescript-eslint/no-explicit-any
-    return a.join("");// eslint-disable-next-line  @typescript-eslint/no-explicit-any
-  }// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+  String.prototype.replaceAt = function (index, char) {var a = this.split("");a[index] = char;return a.join("");}// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 
   const episodes = data.channels.map((episode, index) => {
     return {
