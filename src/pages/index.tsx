@@ -129,11 +129,11 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   });
 
-  String.prototype.replaceAt = function (index, char) {
-    var a = this.split("");
-    a[index] = char;
-    return a.join("");
-  }
+  String.prototype.replaceAt = function (index, char) {// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+    var a = this.split("");// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+    a[index] = char;// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+    return a.join("");// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+  }// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 
   const episodes = data.channels.map((episode, index) => {
     return {
@@ -142,15 +142,15 @@ export const getStaticProps: GetStaticProps = async () => {
       title: episode.title,
       thumbnail: episode.cover,
       members: episode.artist,
-      publishedAt: format(parseISO(
-        new Date().toISOString()
-          .replaceAt(23, "")
-          .replaceAt(22, "")
-          .replaceAt(21, "")
-          .replaceAt(20, "")
-          .replaceAt(19, "")
-          .replaceAt(10, " ")
-      ), 'd MMM yy', { locale: ptBR }),
+      publishedAt: format(parseISO(// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+        new Date().toISOString()// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+          .replaceAt(23, "")// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+          .replaceAt(22, "")// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+          .replaceAt(21, "")// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+          .replaceAt(20, "")// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+          .replaceAt(19, "")// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+          .replaceAt(10, " ")// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+      ), 'd MMM yy', { locale: ptBR }),// eslint-disable-next-line  @typescript-eslint/no-explicit-any
       duration: '00:00:00',
       durationAsString: '00:00:00',
       url: episode.stream_url,
